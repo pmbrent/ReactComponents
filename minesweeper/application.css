@@ -1,0 +1,96 @@
+div, body, html, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  display: block;
+
+  background: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 48px;
+}
+
+.group {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container, #game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modalContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modalContent p {
+  color: white;
+  font-size: 24px;
+}
+
+.gameOver {
+  display: block;
+}
+
+.game {
+  width: 320px;
+  height: 320px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.row {
+  width: 100%;
+  margin: auto;
+}
+
+.tile {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-style: outset;
+  float: left;
+  font-size: 24px;
+}
+
+.revealed {
+  border-style: inset;
+}
+
+.bombed {
+
+}
+
+.flagged {
+  color: red;
+}
