@@ -9,20 +9,12 @@ var Game = React.createClass({
     };
   },
   updateGame: function(tile, reveal) {
-    if (reveal) {
-      tile.explore();
-    } else {
-      tile.toggleFlag();
-    }
-
-    var gameWon = this.state.board.won();
-    var gameOver = gameWon || this.state.board.lost();
+    reveal ? tile.explore() : tile.toggleFlag();
 
     this.setState({
-      gameWon: gameWon,
-      gameOver: gameOver
+      gameWon: this.state.board.won(),
+      gameOver: this.state.board.won() || this.state.board.lost()
     });
-
   },
   resetGame: function() {
     this.setState({
@@ -59,10 +51,12 @@ var Board = React.createClass({
           <div className="row group">
             {row.map(function(tile, idx) {
               var tileIdx = rowIdx * gridSize + idx;
-              return <Tile key={tileIdx} tile={tile}
-                        updateGame={this.props.updateGame}
-                        gameOver={this.props.gameOver}
-                      />;
+              return (
+                <Tile key={tileIdx} tile={tile}
+                  updateGame={this.props.updateGame}
+                  gameOver={this.props.gameOver}
+                />
+              );
             }, this)}
           </div>
         );

@@ -1,0 +1,88 @@
+div, body, html, ul, li, img, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  display: block;
+
+  background: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.group {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.thumblist {
+  position: relative;
+  height: 70px;
+  width: 90%;
+  margin: auto;
+  white-space: nowrap;
+}
+
+.thumb {
+  width: 70px;
+  float: left;
+  border: 1px solid black;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+}
+
+.active {
+  width: 400px;
+  height: 400px;
+}
+
+.container {
+  margin: auto;
+  width: 400px;
+  position: relative;
+}
+
+.nav {
+  font-size: 24px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav:first-of-type {
+  left: -40px;
+}
+
+.nav:last-of-type {
+  right: -40px;
+}
+
+.nav-list {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 72px;
+  margin: auto;
+}

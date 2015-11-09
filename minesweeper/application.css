@@ -63,10 +63,12 @@ h1 {
 }
 
 .game {
-  width: 320px;
-  height: 320px;
+  width: 360px;
+  height: 360px;
   margin: auto;
-  border: 1px solid black;
+  /*border: 2px solid black;*/
+  box-shadow: 2px 2px 5px #000;
+  /*border: 3px solid black;*/
 }
 
 .row {
@@ -77,18 +79,19 @@ h1 {
 .tile {
   width: 30px;
   height: 30px;
-  border: 1px solid black;
-  border-style: outset;
+  border: outset;
   float: left;
   font-size: 24px;
+  background: lightgray;
 }
 
 .revealed {
-  border-style: inset;
+  border: inset;
+  background: #f2f2f2;
 }
 
 .bombed {
-
+  background: red;
 }
 
 .flagged {
