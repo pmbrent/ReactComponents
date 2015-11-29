@@ -63,8 +63,8 @@ h1 {
 }
 
 .game {
-  width: 360px;
-  height: 360px;
+  width: 420px;
+  height: 420px;
   margin: auto;
   /*border: 2px solid black;*/
   box-shadow: 2px 2px 5px #000;
@@ -77,11 +77,11 @@ h1 {
 }
 
 .tile {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   border: outset;
   float: left;
-  font-size: 24px;
+  font-size: 14px;
   background: lightgray;
 }
 
