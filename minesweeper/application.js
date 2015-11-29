@@ -86,6 +86,11 @@ var Tile = React.createClass({
         className += " bombed";
       } else {
         content = tile.adjacentBombCount().toString();
+        if (content === "0") {
+          content = " ";
+        } else {
+          className += this.colorize(content);
+        }
       }
     } else if (tile.flagged) {
       content = "⚑";
@@ -100,6 +105,27 @@ var Tile = React.createClass({
       </div>
     );
   },
+
+  colorize: function(numStr) {
+    if (numStr === "1") {
+      return " blue";
+    } else if (numStr === "2") {
+      return " green";
+    } else if (numStr === "3") {
+      return " red";
+    } else if (numStr === "4") {
+      return " darkBlue";
+    } else if (numStr === "5") {
+      return " darkRed";
+    } else if (numStr === "6") {
+      return " teal";
+    } else if (numStr === "7") {
+      return " black";
+    } else {
+      return " purple";
+    }
+  },
+
   handleClick: function(e) {
     if (this.props.gameOver) return;
     e.preventDefault();
