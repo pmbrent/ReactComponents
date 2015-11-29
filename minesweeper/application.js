@@ -1,4 +1,4 @@
-var M = Minesweeper;
+var M = Minefinder;
 
 var Game = React.createClass({
   getInitialState: function() {
@@ -63,7 +63,7 @@ var Board = React.createClass({
       }, this);
     return (
       <div>
-        <h1>Minesweeper!</h1>
+        <h1>Find the Mines!</h1>
         <div className="game">
           {tiles}
         </div>

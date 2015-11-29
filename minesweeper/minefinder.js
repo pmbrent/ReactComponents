@@ -1,11 +1,11 @@
 (function () {
   "use strict";
 
-  if (typeof window.Minesweeper === 'undefined') {
-    window.Minesweeper = {};
+  if (typeof window.Minefinder === 'undefined') {
+    window.Minefinder = {};
   }
 
-  var Tile = window.Minesweeper.Tile = function (board, pos) {
+  var Tile = window.Minefinder.Tile = function (board, pos) {
     this.board = board;
     this.pos = pos;
     this.bombed = false;
@@ -42,7 +42,7 @@
 
   Tile.prototype.neighbors = function() {
     var adjacentCoords = [];
-    Minesweeper.Tile.DELTAS.forEach(function(delta) {
+    Minefinder.Tile.DELTAS.forEach(function(delta) {
       var newPos = [delta[0] + this.pos[0], delta[1] + this.pos[1]];
       if (this.board.onBoard(newPos)) {
         adjacentCoords.push(newPos);
@@ -67,7 +67,7 @@
     return false;
   };
 
-  var Board = window.Minesweeper.Board = function (gridSize, numBombs) {
+  var Board = window.Minefinder.Board = function (gridSize, numBombs) {
     this.gridSize = gridSize;
     this.grid = [];
     this.numBombs = numBombs;
@@ -79,7 +79,7 @@
     for (var i = 0; i < this.gridSize; i++) {
       this.grid.push([]);
       for (var j = 0; j < this.gridSize; j++) {
-        var tile = new Minesweeper.Tile(this, [i, j]);
+        var tile = new Minefinder.Tile(this, [i, j]);
         this.grid[i].push(tile);
       }
     }
