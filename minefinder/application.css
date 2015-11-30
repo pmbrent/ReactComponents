@@ -92,7 +92,12 @@ h1 {
 }
 
 .bombed {
-  background: red;
+  font-size: 10px;
+  background: darkred;
+}
+
+.safebombed {
+  font-size: 10px;
 }
 
 .flagged {

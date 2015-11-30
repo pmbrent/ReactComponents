@@ -77,12 +77,17 @@ var Tile = React.createClass({
     var content, tile = this.props.tile, className = "tile";
 
     if (this.props.gameOver && tile.bombed) {
-      content = "💣";
-      className += " bombed revealed";
+      if (this.props.gameWon) {
+        content = "💣";
+        className += " safebombed revealed";
+      } else {
+        content = "💥";
+        className += " bombed revealed";
+      }
     } else if (tile.explored) {
       className += " revealed";
       if (tile.bombed) {
-        content = "💣";
+        content = "💥";
         className += " bombed";
       } else {
         content = tile.adjacentBombCount().toString();
