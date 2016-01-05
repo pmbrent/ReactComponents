@@ -141,13 +141,10 @@ var Tile = React.createClass({
     if (this.props.gameOver) return;
     e.preventDefault();
 
-    switch (e.nativeEvent.which) {
-      case 1:
-        this.props.updateGame(this.props.tile, true);
-        break;
-      case 3:
+    if (e.nativeEvent.which == 3 || e.ctrlKey) {
         this.props.updateGame(this.props.tile, false);
-        break;
+    } else {
+        this.props.updateGame(this.props.tile, true);
     }
   }
 });
