@@ -53,7 +53,7 @@ var Board = React.createClass({
         var gridHeight = this.props.board.gridHeight;
         var gridWidth = this.props.board.gridWidth;
         return(
-          <div className="row group">
+          <div key={rowIdx} className="row group">
             {row.map(function(tile, idx) {
               var tileIdx = rowIdx * gridWidth + idx;
               return (
